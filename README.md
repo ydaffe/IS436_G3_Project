@@ -1,6 +1,6 @@
 # IS436_G3_Project
 
-IS436 Group 3 — an online chat application built with socket programming. One server, multiple clients, with chat rooms, messages and connection sessions stored in SQLite.
+IS436 Group 3, an online chat application built with socket programming. One server, multiple clients, with chat rooms, messages and connection sessions stored in SQLite.
 
 ## Status
 
