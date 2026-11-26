@@ -1,4 +1,4 @@
-# IS436_G3_Project — Multi-client Chat Application
+# IS436_G3_Project: Multi-client Chat Application
 
 IS436 Group 3. A TCP chat server and two clients (command line and Tkinter GUI), written in Python using **only the standard library** (`socket`, `threading`, `json`, `queue`, `tkinter`, `sqlite3`).
 
