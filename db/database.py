@@ -15,12 +15,15 @@ are taking care of that ourselves.
 Timestamps are passed in by the server (ISO 8601, local time) so the database
 uses exactly the same times that the clients see.
 """
+import os
 import sqlite3
 from datetime import datetime
 from pathlib import Path
 
 DB_DIR = Path(__file__).parent
-DB_PATH = DB_DIR / "chat.db"
+# The CHAT_DB_FILE environment variable can point the database elsewhere
+# (the automated tests use a temporary file).
+DB_PATH = Path(os.environ.get("CHAT_DB_FILE", DB_DIR / "chat.db"))
 SCHEMA_PATH = DB_DIR / "schema.sql"
 
 

@@ -4,6 +4,7 @@ Shared settings for the server and both clients.
 Anything the server and the clients must agree on (or that you may want to
 tweak for a demo) lives here, so it only has to be changed in one place.
 """
+import os
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
@@ -34,7 +35,9 @@ HISTORY_SIZE = 10           # how many recent messages a newly joined client rec
 # Files (server side only)
 # ---------------------------------------------------------------------------
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-LOG_FILE = PROJECT_ROOT / "logs" / "chat_log.jsonl"   # chat history, one JSON object per line
+# Chat history, one JSON object per line. The CHAT_LOG_FILE environment
+# variable can point it elsewhere (the automated tests use a temporary file).
+LOG_FILE = Path(os.environ.get("CHAT_LOG_FILE", PROJECT_ROOT / "logs" / "chat_log.jsonl"))
 
 
 def parse_port(value):
